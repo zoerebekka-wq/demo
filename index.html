@@ -280,26 +280,26 @@ const bookingMap = {
   fillers: {
     title: "Book Dermal Fillers",
     url: "https://calendly.com/zoe-softwirestudios/dermal-fillers"
-      
-hydraglow:{
-title:"Book HydraGlow Renewal Facial",
-url:"https://calendly.com/zoe-softwirestudios/30min"
-}
+  },
+  hydraglow: {
+    title: "Book HydraGlow Renewal Facial",
+    url: "https://calendly.com/zoe-softwirestudios/30min"
+  }
 };
 
-const params=new URLSearchParams(window.location.search);
-const type=params.get("booking") || "consultation";
+const params = new URLSearchParams(window.location.search);
+const type = params.get("booking") || "consultation";
+const selected = bookingMap[type] || bookingMap.consultation;
 
-const selected=bookingMap[type];
-
-document.getElementById("booking-title").textContent=selected.title;
+document.getElementById("booking-title").textContent = selected.title;
 
 Calendly.initInlineWidget({
-url:selected.url,
-parentElement:document.getElementById("calendly-embed"),
-resize:true
+  url: selected.url,
+  parentElement: document.getElementById("calendly-embed"),
+  resize: true
 });
 </script>
+
 
 <script src="https://code.tidio.co/bfxuyt93qgfhtlybjlkut60ttmyxguzt.js" async></script>
 
